@@ -1,0 +1,28 @@
+<div class="specialty-filter">
+  <label for="specialtySelect">Select Specialty:</label>
+  <select id="specialtySelect" [(ngModel)]="selectedSpecialty" (change)="filterDoctors()">
+    <option value="All">All</option>
+    <option value="Medicine">Medicine</option>
+    <option value="Neurology">Neurology</option>
+    <option value="Gynaecologist">Gynaecologist</option>
+    <option value="Ortho">Ortho</option>
+  </select>
+</div>
+
+<mat-grid-list cols="3" rowHeight="3:1">
+    <mat-grid-tile *ngFor="let doctor of doctors" [style.align-self]="'stretch'">
+      <mat-card class="doctor-card">
+        <div class="doctor-photo">
+          <img mat-card-image [src]="doctor.docImagePath || 'assets/Doctor-default.jpg'" alt="Doctor Photo">
+        </div>
+        <div class="doctor-info">
+          <mat-card-content>
+            <h2>Dr. {{ doctor.firstName }} {{ doctor.lastName }}</h2>
+            <p>Specialty: {{ doctor.specialty }}</p>
+            <p>Qualifications: {{ doctor.qualifications }}</p>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  

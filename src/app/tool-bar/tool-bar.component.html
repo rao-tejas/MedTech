@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="assets/Cross.png" alt="" width="30" height="30" class="d-inline-block align-text-top">&nbsp;
+      <span style="color: #009999; font-family: 'Times New Roman', Times, serif;">MedTech</span>
+
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-logo">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
+
+
+        <mat-menu #userMenu="matMenu">
+          <ng-container *ngIf="isLoggedIn; else loginTemplate">
+            <!-- User is logged in -->
+            <button mat-menu-item (click)="viewProfile()">View Profile</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
+          </ng-container>
+          <ng-template #loginTemplate>
+            <!-- User is not logged in -->
+            <button mat-menu-item (click)="login()">Login</button>
+          </ng-template>
+        </mat-menu>
+        
+       <mat-icon [matMenuTriggerFor]="userMenu" class="custom-button-profile">account_circle</mat-icon>
+      </div>
+    </div>
+  </div>
+</nav>

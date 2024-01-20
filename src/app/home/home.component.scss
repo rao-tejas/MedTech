@@ -1,0 +1,59 @@
+.custom-carousel {
+    max-height: 50vh;
+
+    /* Adjust the height as needed */
+    img {
+        height: 50vh;
+        width: 100vw;
+    }
+}
+
+
+
+// .service-card {
+//     width: 30vw;
+//     margin: 5rem;
+//     border-radius: 5%;
+//     transition: transform 0.2s, box-shadow 0.2s;
+
+// }
+
+// .service-card:hover {
+//     transform: scale(1.05);
+//     /* Increase the size by 5% */
+//     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+//     /* Add a subtle shadow */
+// }
+
+// img {
+//     height: 10vh;
+//     width: 5vw;
+// }
+
+/* Custom CSS for mat-card */
+.service-card {
+    margin: 10px; /* Add margin to create space between cards */
+    width: 100%; /* Ensure all cards have the same width */
+    max-width: 40vw; /* Set a maximum width for consistency */
+    border-radius: 10px; /* Add border radius for a rectangular shape */
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover {
+        transform: scale(1.05);
+        /* Increase the size by 5% */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        /* Add a subtle shadow */
+    }
+  /* Style the mat-card image */
+  .service-card img {
+    width: 50px; /* Set a consistent width for the images */
+    height: 50px; /* Set a consistent height for the images */
+    object-fit: contain; /* Ensure the image fits inside the specified dimensions */
+  }
+  
+  /* Optional: Add some padding and styling to the card content */
+  .service-card mat-card-content {
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  

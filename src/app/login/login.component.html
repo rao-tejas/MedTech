@@ -1,0 +1,33 @@
+<div class="login-container">
+  <mat-button-toggle-group style="    height: 43px;
+  align-items: center;" name="LoginOption" aria-label="Selected Doctor"  [(value)]="selectedRole">
+    <mat-button-toggle value="Doctor">Doctor</mat-button-toggle>
+    <mat-button-toggle value="Patient">Patient</mat-button-toggle>
+  </mat-button-toggle-group>
+ <!-- login.component.html -->
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="input-container">
+    <input type="text" placeholder="Email" formControlName="email">
+    <div *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched" class="error">Email is required</div>
+    <!-- Use the safe navigation operator '?' here -->
+    <div *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched" class="error">Invalid email format</div>
+    <!-- Use the safe navigation operator '?' here -->
+  </div>
+  <div class="input-container">
+    <input type="password" placeholder="Password" formControlName="password">
+    <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" class="error">Password is required</div>
+    <!-- Use the safe navigation operator '?' here -->
+    <div *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched" class="error">Password must be at least 5 characters</div>
+    <!-- Use the safe navigation operator '?' here -->
+  </div>
+  <button type="submit" [disabled]="!loginForm.valid">Sign In</button>
+  <div *ngIf="showPasswordWarning" class="password-warning">
+    Incorrect email or password. Please try again.
+  </div>
+  <div class="signup">
+    <a routerLink="/signup">Sign Up</a>
+  </div>
+  
+</form>
+  
+</div>
