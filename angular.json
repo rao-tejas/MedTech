@@ -20,7 +20,7 @@
             "outputPath": "dist/med-tech",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "/MedTechClone/",
+            "baseHref": "/MedTech/",
             "polyfills": [
               "zone.js"
             ],
